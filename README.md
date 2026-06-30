@@ -95,7 +95,7 @@ Global flags: `--no-color` (disable ANSI output), `-h`/`--help`, `-v`/`--version
 ## Architecture
 
 ```
-revtool/
+RevTool/
 ├── revtool.c      # entry point, argument pre-processing, command dispatch
 ├── common.h        # shared structs, prototypes, ANSI color helpers
 ├── common.c         # file_t (mmap-backed file handling), entropy, MD5/SHA1/SHA256, magic detection
