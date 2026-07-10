@@ -1,6 +1,4 @@
-#
 # Makefile for revtool - Binary Reverse Engineering Toolkit
-#
 
 CC      ?= gcc
 CFLAGS  ?= -O2 -Wall -Wextra -Wpedantic -std=c11
