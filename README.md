@@ -1,6 +1,6 @@
 # revtool
 
-> Binary reverse engineering toolkit in C — file analysis, ELF/PE parsing, entropy scanning, string extraction, and optional disassembly.
+> Binary reverse engineering toolkit in C - file analysis, ELF/PE parsing, entropy scanning, string extraction, and optional disassembly.
 
 A single self-contained CLI binary with no mandatory external dependencies: MD5/SHA1/SHA256 hashing, Shannon entropy, ELF and PE header parsing, and string extraction are all implemented from scratch on top of the C standard library and POSIX (`mmap`, `fstat`).
 
@@ -27,8 +27,8 @@ A single self-contained CLI binary with no mandatory external dependencies: MD5/
 
 - A C11 compiler (`gcc` or `clang`)
 - `libm` (math library, used for entropy calculation)
-- `capstone` — optional, enables real disassembly in the `disasm` command (falls back to a colorized hex dump otherwise)
-- `libasan` — optional, only needed for the `debug` build (AddressSanitizer)
+- `capstone` - optional, enables real disassembly in the `disasm` command (falls back to a colorized hex dump otherwise)
+- `libasan` - optional, only needed for the `debug` build (AddressSanitizer)
 
 ---
 
@@ -102,15 +102,15 @@ RevTool/
 ├── info.c            # `info` command
 ├── hexdump.c          # `hex` command
 ├── strings.c           # `strings` command
-├── elf.c                # `elf` command — standalone ELF32/64 parser
-├── pe.c                   # `pe` command — standalone PE/COFF parser
+├── elf.c                # `elf` command - standalone ELF32/64 parser
+├── pe.c                   # `pe` command - standalone PE/COFF parser
 ├── entropy.c                # `entropy` command
-├── disasm.c                   # `disasm` command — Capstone wrapper with hex fallback
-├── scan.c                       # `scan` command — orchestrates the others
+├── disasm.c                   # `disasm` command - Capstone wrapper with hex fallback
+├── scan.c                       # `scan` command - orchestrates the others
 └── Makefile
 ```
 
-Files are memory-mapped read-only via `mmap` and always released through `file_close()`, which also closes the underlying file descriptor — no manual `open`/`close` pairs scattered across modules. ELF and PE structures are read directly from the mapped bytes using small endian-aware accessor functions, so the tool has zero parsing dependencies even for binary format internals.
+Files are memory-mapped read-only via `mmap` and always released through `file_close()`, which also closes the underlying file descriptor - no manual `open`/`close` pairs scattered across modules. ELF and PE structures are read directly from the mapped bytes using small endian-aware accessor functions, so the tool has zero parsing dependencies even for binary format internals.
 
 ---
 
